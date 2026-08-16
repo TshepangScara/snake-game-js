@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Snake Game</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome CDN for control icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <script src="script.js" defer></script>
+
+  </head>
+
+  <body tabindex="-1">
+
+    <!-- Welcome popup -->
+    <div id="welcome-popup" class="popup-overlay">
+      <div class="popup-box">
+        <h2>Welcome to Snake!</h2>
+        <p>Press <strong>Enter</strong> or tap the button to start.</p>
+        <div class="difficulty-buttons" style="margin-top:14px;">
+          <button onclick="document.getElementById('welcome-popup').style.display='none';document.getElementById('difficulty-popup').style.display='flex';">Play</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Difficulty popup -->
+    <div id="difficulty-popup" class="popup-overlay" style="display:none;">
+      <div class="popup-box">
+        <h2>Choose Difficulty</h2>
+        <div class="difficulty-buttons">
+          <button data-speed="180">Easy</button>
+          <button data-speed="100">Medium</button>
+          <button data-speed="60">Hard</button>
+        </div>
+        <p style="margin-top:10px;font-size:0.9rem;">(or press 1 = Easy &nbsp;|&nbsp; 2 = Medium &nbsp;|&nbsp; 3 = Hard)</p>
+      </div>
+    </div>
+
+    <!-- Game Over popup -->
+    <div id="gameover-popup" class="popup-overlay" style="display:none;">
+      <div class="popup-box">
+        <h2>Game Over!</h2>
+        <p id="gameover-score"></p>
+        <p id="gameover-highscore"></p>
+        <h3>Top Scores</h3>
+        <ol id="leaderboard"></ol>
+        <div class="difficulty-buttons">
+          <button id="play-again-btn">Play Again</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="game-details">
+        <span class="score">Score: 0</span>
+        <span id="difficulty-label" class="difficulty-label"></span>
+        <span class="high-score">High Score: 0</span>
+        <button id="pause-btn" class="pause-btn" title="Pause (P)" style="display:none;">⏸</button>
+      </div>
+
+      <div class="play-board"></div>
+      <div class="controls">
+        <div class="dpad">
+          <i data-key="ArrowUp"    class="fa-solid fa-arrow-up-long    dpad-up"></i>
+          <div class="dpad-middle">
+            <i data-key="ArrowLeft"  class="fa-solid fa-arrow-left-long"></i>
+            <span class="dpad-center"></span>
+            <i data-key="ArrowRight" class="fa-solid fa-arrow-right-long"></i>
+          </div>
+          <i data-key="ArrowDown"  class="fa-solid fa-arrow-down-long  dpad-down"></i>
+        </div>
+      </div>
+    </div>
+  </body>
+  
+</html>
