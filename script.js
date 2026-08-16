@@ -115,7 +115,7 @@ function togglePause() {
 }
 
 pauseBtn.addEventListener("click", togglePause);
-document.addEventListener("keydown", (e) => { if (e.key === "p" || e.key === "P") togglePause(); });
+document.addEventListener("keydown", (e) => { if (e.key === "p" || e.key === "P" || e.key === "Escape") togglePause(); });
 
 // ── Play Again ────────────────────────────────────
 playAgainBtn.addEventListener("click", () => location.reload());
